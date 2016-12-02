@@ -1,0 +1,255 @@
+/*---------------------------------------whole page design---------------------------------------*/
+html, body {
+	font-family: Arial;
+	color: white;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#at-plus-container {
+	position: relative;
+	width: 180px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#bottom-positioner {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+/*-----------------------------------------button design-----------------------------------------*/
+#button {
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	border-radius: 50%;
+	overflow: hidden;
+}
+/*----------information bar design----------*/
+#info-bar {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	bottom: 97px;
+	left: 77px;
+	border-radius: 50%;
+	background: #7E7E7E center no-repeat;
+	overflow: hidden;
+	/* animation design */
+	transition: all 0.5s;
+	opacity: 0;
+}
+/* animation design */
+#button:hover #info-bar {
+	width: 130px;
+	height: 130px;
+	left: 25px;
+	opacity: 1;
+	bottom: 150px;
+}
+
+#info-bar ul {
+	padding-top: 12px;
+	padding-left: 0px;
+	margin: 0;
+	height: 0;
+	text-align: center;
+	font-size: 17px;
+}
+
+#info-bar li {
+	list-style: none;
+	display: block;
+}
+
+#info-bar li img {
+	vertical-align: middle;
+}
+
+#info-bar li.comment {
+	font-size: 40px;
+}
+
+#info-bar li.mine {
+	display: inline-block;
+	color: #26E79E;
+	box-sizing: border-box;
+}
+
+#info-bar li:nth-child(3) {
+	margin-right: 10px;
+}
+
+/*----------------control ring container(contains control-ring and apb) design-------------------*/
+#control-ring-container {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	bottom: 206px;
+	left: 0px;
+	border-radius: 50%;
+}
+
+#button:hover #control-ring-container {
+	width: 180px;
+	height: 180px;
+	left: 0px;
+	bottom: 25px;
+}
+
+#control-ring-container li {
+	list-style: none;
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin-top: 0px;
+	margin-left: 35px;
+	border-radius: 50%;
+	transition: all 0.5s;
+	opacity: 0;
+}
+/*-----control ring design(animation and more)-----*/
+/* animation design */
+#control-ring {
+	padding: 0;
+	margin: 0;
+	width: 0px;
+	height: 26px;
+	position: absolute;
+	left: 40px;
+}
+
+#button:hover #control-ring li {
+	opacity: 1;
+}
+
+#control-ring li:nth-child(1) {
+	background-color: #686868;
+	margin-top: 80px;
+	margin-left: 30px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(1) {
+	background: url(assets/images/nomask.png) center no-repeat;
+	background-color: #686868;
+	background-size: 17px 17px;
+	margin-top: 35px;
+	margin-left: -30px;
+}
+
+#control-ring li:nth-child(2) {
+	background-color: #686868;
+	margin-top: -30px;
+	margin-left: 30px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(2) {
+	background: url(assets/images/history.png) center no-repeat;
+	background-color: #686868;
+	background-size: 17px 17px;
+	margin-top: 5px;
+	margin-left: -40px;
+}
+
+#control-ring span {
+	color: rgba(0, 0, 0, 0);
+}
+
+#button:hover #control-ring span {
+	position: relative;
+	left: 20px;
+	bottom: 6px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	padding-top: 2px;
+	padding-left: 7px;
+	border-radius: 50%;
+	background-color: red;
+	color: white;
+	box-sizing: border-box;
+}
+
+#control-ring li:nth-child(3) {
+	background-color: #686868;
+	margin-top: -35px;
+	margin-left: 30px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(3) {
+	background: url(assets/images/message.png) center no-repeat;
+	background-color: #686868;
+	background-size: 17px 17px;
+	margin-top: 5px;
+	margin-left: -25px;
+}
+
+#control-ring li:nth-child(4) {
+	background-color: #686868;
+	margin-top: -35px;
+	margin-left: 30px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(4) {
+	background: url(assets/images/setting.png) center no-repeat;
+	background-color: #686868;
+	background-size: 17px 17px;
+	margin-top: -10px;
+	margin-left: 10px;
+}
+
+#control-ring li:nth-child(5) {
+	background-color: #686868;
+	margin-top: -25px;
+	margin-left: 35px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(5) {
+	background: url(assets/images/signin.png) center no-repeat;
+	background-color: #686868;
+	background-size: 17px 17px;
+	margin-top: -35px;
+	margin-left: 55px;
+}
+/*-----apb(at plus button) design(animation and more)-----*/
+#button .apb {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	bottom: 97px;
+	left: 77px;
+	background: url(assets/images/atplus_white.png) center no-repeat;
+	background-color: #989FCF;
+	background-size: 20px 15px;
+	border-radius: 50%;
+	transition: all 0.5s;
+	transition-delay: 0.5s;
+}
+
+
+/* animation design */
+#button:hover .apb {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	bottom: 90px;
+	left: 65px;
+	background: url(assets/images/atplus_green.png) center no-repeat;
+	background-color: rgba(48, 63, 159, 1);
+	background-size: 32px 24px;
+	border-radius: 50%;
+	transition-delay: 0s;
+	transform: ;
+}
+

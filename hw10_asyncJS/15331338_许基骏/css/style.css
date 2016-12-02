@@ -1,0 +1,303 @@
+/*---------------------------------------whole page design---------------------------------------*/
+html, body {
+	font-family: Arial;
+	color: white;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	/*overflow: visible;*/
+}
+
+#at-plus-container {
+	/*border: 1px solid blue;*/
+	
+	position: relative;
+	width: 180px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#bottom-positioner {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+/*-----------------------------------------button design-----------------------------------------*/
+#button {
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	border-radius: 50%;
+	/*overflow: hidden;*/
+}
+/*----------information bar design----------*/
+#info-bar {
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	bottom: 97px;
+	left: 77px;
+	border-radius: 50%;
+	background: #7E7E7E center no-repeat;
+	overflow: hidden;
+	/* animation design */
+	transition: all 0.5s;
+	opacity: 0;
+}
+/* animation design */
+#button:hover #info-bar {
+	width: 130px;
+	height: 130px;
+	left: 25px;
+	opacity: 1;
+	bottom: 150px;
+	z-index: 10;
+}
+
+#info-bar ul {
+	padding-top: 12px;
+	padding-left: 0px;
+	margin: 0;
+	height: 0;
+	text-align: center;
+	font-size: 17px;
+}
+
+#info-bar li {
+	list-style: none;
+	display: block;
+}
+
+#info-bar li img {
+	vertical-align: middle;
+}
+
+#info-bar li.comment {
+	font-size: 40px;
+}
+
+#info-bar li.mine {
+	display: inline-block;
+	color: #26E79E;
+	box-sizing: border-box;
+}
+
+#info-bar li:nth-child(3) {
+	margin-right: 10px;
+}
+
+/*----------------control ring container(contains control-ring and apb) design-------------------*/
+#control-ring-container {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	bottom: 206px;
+	left: 0px;
+	border-radius: 50%;
+}
+
+#button:hover #control-ring-container {
+	width: 180px;
+	height: 180px;
+	left: 0px;
+	bottom: 25px;
+}
+
+.button {
+	list-style: none;
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin-top: 0px;
+	margin-left: 35px;
+	padding: 0;
+	/*border-radius: 50%;*/
+	transition: all 0.5s;
+	opacity: 0;
+}
+/*-----control ring design(animation and more)-----*/
+/* animation design */
+#control-ring {
+	padding: 0;
+	margin: 0;
+	width: 0px;
+	height: 26px;
+	position: absolute;
+	left: 40px;
+}
+
+#button:hover .button {
+	opacity: 1;
+	cursor: pointer;
+}
+
+#control-ring li:nth-child(1) {
+	/*background-color: #22489D;*/
+	margin-top: 80px;
+	margin-left: 30px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(1) {
+	/*background: url(assets/images/nomask.png) center no-repeat;*/
+	/*background-color: #22489D;*/
+	background-size: 17px 17px;
+	margin-top: 35px;
+	margin-left: -30px;
+}
+
+#control-ring li:nth-child(2) {
+	/*background-color: #22489D;*/
+	margin-top: -30px;
+	margin-left: 30px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(2) {
+	/*background-color: #22489D;*/
+	background-size: 17px 17px;
+	margin-top: 5px;
+	margin-left: -40px;
+}
+
+/*#control-ring .unread {
+	color: rgba(0, 0, 0, 0);
+}*/
+
+.unread {
+	position: relative;
+	left: 25px;
+	top: -35px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	padding-left: 5px;
+	border-radius: 50%;
+	background-color: red;
+	color: white;
+	box-sizing: border-box;
+	z-index: 20;
+}
+
+#control-ring li:nth-child(3) {
+	/*background-color: #22489D;*/
+	margin-top: -35px;
+	margin-left: 30px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(3) {
+	/*background: url(assets/images/message.png) center no-repeat;*/
+	/*background-color: #22489D;*/
+	background-size: 17px 17px;
+	margin-top: 5px;
+	margin-left: -25px;
+}
+
+#control-ring li:nth-child(4) {
+	/*background-color: #22489D;*/
+	margin-top: -35px;
+	margin-left: 30px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(4) {
+	/*background: url(assets/images/setting.png) center no-repeat;*/
+	/*background-color: #22489D;*/
+	background-size: 17px 17px;
+	margin-top: -10px;
+	margin-left: 10px;
+}
+
+#control-ring li:nth-child(5) {
+	/*background-color: #22489D;*/
+	margin-top: -25px;
+	margin-left: 35px;
+}
+/* animation design */
+#button:hover #control-ring li:nth-child(5) {
+	/*background: url(assets/images/signin.png) center no-repeat;*/
+	/*background-color: #22489D;*/
+	background-size: 17px 17px;
+	margin-top: -35px;
+	margin-left: 55px;
+}
+/*-----apb(at plus button) design(animation and more)-----*/
+#button .apb {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	bottom: 97px;
+	left: 77px;
+	background: url(assets/images/atplus_white.png) center no-repeat;
+	background-color: #989FCF;
+	background-size: 20px 15px;
+	border-radius: 50%;
+	transition: all 0.5s;
+	transition-delay: 0.5s;
+}
+
+
+/* animation design */
+#button:hover .apb {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	bottom: 90px;
+	left: 65px;
+	background: url(assets/images/atplus_green.png) center no-repeat;
+	background-color: rgba(48, 63, 159, 1);
+	background-size: 32px 24px;
+	border-radius: 50%;
+	transition-delay: 0s;
+}
+
+.button_letter_div {
+	border-radius: 50%;
+	height: 28px;
+	position: relative;
+	top: 5px;
+	left: 5px;
+	padding-left: 8px;
+	padding-top: 4px;
+	font-weight: bold;
+	/*color: #26E79E;*/
+	font-size: 20px;
+}
+
+#calculation_result {
+	position: relative;
+	left: 45px;
+	top: 45px;
+	color: #26E79E;
+	font-size: 30px;
+	width: 30px;
+	height: 30px;
+}
+
+.abled_button {
+	color: #26E79E;
+	background-color: #22489D;
+}
+
+.disabled_button {
+	color: white;
+	background-color: #7E7E7E;
+}
+
+#order_sequence {
+	display: block;
+	position: relative;
+	bottom: 300px;
+	left: 60px;
+	/*border: 1px solid blue;*/
+	width: 50px;
+	height: 20px;
+	color: black;
+	font-size: 20px;
+}

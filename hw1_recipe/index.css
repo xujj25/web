@@ -1,0 +1,59 @@
+body {
+		/* background format */
+	background-image: url(http://www.bz55.com/uploads/allimg/150327/139-15032G44019.jpg);
+	background-repeat: repeat;
+}
+
+#h1_div_id {
+	background: rgba(50, 50, 50, 0.3);
+	border-radius: 40pt;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-style: italic;
+}
+
+#h1_id {
+	text-align: center;
+	background: rgba(50, 50, 50, 0);
+	color: rgb(255, 255, 255);
+	font-size: 85pt;
+	font-family: "Annabelle", Georgia, Garamond, serif;
+	letter-spacing: 0;
+	text-decoration:none;
+	font-weight: normal;
+}
+
+#ul_div_id {
+	font-style: normal;
+	width: 1024px;
+	margin-left:auto;
+	margin-right:auto;
+	width: 1024px;
+	background-image: url(
+		http://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/silverware.jpg);
+	background-repeat: repeat;
+}
+
+#info_id {
+	border-radius: 10pt;
+	background: rgba(50, 50, 50, 0.4);
+	color: rgb(255, 255, 255);
+	font-style: italic;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div>span {
+	font-weight: bold;
+	font-size: 11pt;
+	text-align: center;
+}
+
+div>p {
+	font-size: 9pt;
+	text-align: center;
+}

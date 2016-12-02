@@ -1,0 +1,62 @@
+body
+{
+	font-family: "Times New Roman";
+}
+
+table 
+{
+	font-family: Arial;
+	border: 1px solid grey;
+	border-left: none;
+	border-top: none;
+}
+
+td, th
+{
+	border: 1px solid grey;
+	border-bottom: none;
+	border-right: none;
+}
+
+.thStyle
+{
+	background-color: #021C7D;
+	color: white;
+	text-align: left;
+}
+
+.oddTrStyle
+{
+	background-color: lightgrey;
+}
+
+.chosenTh
+{
+	background-color: #A6AFFC;
+}
+
+.cend
+{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	float: right;
+}
+
+.descend
+{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-image: url('img/descend.png');
+	float: right;
+}
+
+.ascend
+{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-image: url('img/ascend.png');
+	float: right;
+}

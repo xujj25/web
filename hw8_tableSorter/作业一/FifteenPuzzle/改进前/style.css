@@ -1,0 +1,321 @@
+body
+{
+	font-family: "华文细黑";
+	position: relative;
+	width: 1350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*-------------------- setting for overall --------------------*/
+#overall_area
+{
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1
+{
+	position: absolute;
+	top: 0px;
+	left: 170px;
+
+	font-size: 55px;
+	color: grey;
+	text-align: center;
+}
+/*-------------------- setting for original image --------------------*/
+
+#original_image
+{
+	position: absolute;
+	left: 180px;
+	top: 200px;
+	width: 330px;
+	height: 330px;
+	background-image: url("img/bgp1.png");
+	background-size: 100%;
+	box-shadow: 5px 5px 10px 5px grey;
+}
+
+#original_image_p
+{
+	position: absolute;
+	top: 150px;
+	left: 180px;
+
+	color: grey;
+}
+/*-------------------- setting for the whole second page --------------------*/
+
+#second_page
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	
+	width: 800px;
+	height: 500px;
+
+}
+/*-------------------- puzzle box style --------------------*/
+
+#puzzle_box
+{
+	position: absolute;
+	top: 30px;
+	right: 170px;
+	width: 480px;
+	height: 480px;
+
+	box-shadow: 3px 3px 10px 5px grey;
+
+}
+
+#puzzle_area
+{
+	position: relative;
+	
+	width: 455px;
+	height: 450px;
+	left: 20px;
+	top: 20px;
+}
+
+.puzzle_block
+{
+	position: absolute;
+	border: 1px solid white;
+	background-image: url("img/bgp1.png");
+	width: 108px;
+	height: 108px;
+	transition-duration: 0.1s;
+	transition-delay: 0.05s;
+}
+
+.puzzle_block:hover
+{
+	border: none;
+	width: 110px;
+	height: 110px;
+}
+/* background setting for blocks */
+#b1
+{
+	background-position: 0px 0px;
+}
+
+#b2
+{
+	background-position: -110px 0px;
+}
+
+#b3
+{
+	background-position: -220px 0px;
+}
+
+#b4
+{
+	background-position: -330px 0px;
+}
+
+#b5
+{
+	background-position: 0px -110px;
+}
+
+#b6
+{
+	background-position: -110px -110px;
+}
+
+#b7
+{
+	background-position: -220px -110px;
+}
+
+#b8
+{
+	background-position: -330px -110px;
+}
+
+#b9
+{
+	background-position: 0px -220px;
+}
+
+#b10
+{
+	background-position: -110px -220px;
+}
+
+#b11
+{
+	background-position: -220px -220px;
+}
+
+#b12
+{
+	background-position: -330px -220px;
+}
+
+#b13
+{
+	background-position: 0px -330px;
+}
+
+#b14
+{
+	background-position: -110px -330px;
+}
+
+#b15
+{
+	background-position: -220px -330px;
+}
+
+#b16
+{
+	border: none;
+	background-image: none;
+}
+/* position of blocks */
+.pos1
+{
+	top: 0px;
+	left: 0px;
+}
+
+.pos2
+{
+	top: 0px;
+	left: 110px;
+}
+
+.pos3
+{
+	top: 0px;
+	left: 220px;
+}
+
+.pos4
+{
+	top: 0px;
+	left: 330px;
+}
+
+.pos5
+{
+	top: 110px;
+	left: 0px;
+}
+
+.pos6
+{
+	top: 110px;
+	left: 110px;
+}
+
+.pos7
+{
+	top: 110px;
+	left: 220px;
+}
+
+.pos8
+{
+	top: 110px;
+	left: 330px;
+}
+
+.pos9
+{
+	top: 220px;
+	left: 0px;
+}
+
+.pos10
+{
+	top: 220px;
+	left: 110px;
+}
+
+.pos11
+{
+	top: 220px;
+	left: 220px;
+}
+
+.pos12
+{
+	top: 220px;
+	left: 330px;
+}
+
+.pos13
+{
+	top: 330px;
+	left: 0px;
+}
+
+.pos14
+{
+	top: 330px;
+	left: 110px;
+}
+
+.pos15
+{
+	top: 330px;
+	left: 220px;
+}
+
+.pos16
+{
+	top: 330px;
+	left: 330px;
+}
+/*-------------------- button style --------------------*/
+
+#button_box
+{
+	position: absolute;
+	top: 470px;
+	right: 0px;
+	width: 120px;
+	height: 130px;
+}
+
+#button_box>button
+{
+	color: white;
+	font-size: 25px;
+	width: 100px;
+	height: 50px;
+	border: none;
+	background-color: #4486F6;
+	box-shadow: 3px 3px 10px 2px grey;
+	margin-bottom: 15px;
+}
+
+#button_box>button:hover
+{
+	font-size: 28px;
+}
+/*-------------------- tip output style --------------------*/
+
+#tip
+{
+	position: absolute;
+	right: 200px;
+	top: 525px;
+
+	height: 50px;
+	width: 400px;
+
+	background-color: white;
+	color: grey;
+	font-size: 25px;
+	text-align: center;
+}

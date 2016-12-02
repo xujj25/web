@@ -1,0 +1,152 @@
+/*------------------------------------design for the whole page-----------------------------------*/
+body
+{
+	background-image: url(image/math_4.jpg);
+	background-position: center;
+	background-size: cover;
+	font-family: "SimHei";
+}
+/*----------------------------------------design for detail---------------------------------------*/
+/* design for h1 */
+#h1_id
+{
+	margin-top: 30px;
+	color: white;
+	font-style: italic;
+	font-size: 60px;
+	font-family: Georgia;
+	text-align: center;
+}
+/* design for calculator area */
+#overall_area
+{	
+	background-color: rgba(1, 1, 1, 0);
+	margin: auto;
+	width: 496px;
+	height: 460px;
+}
+/* design for the output window */
+#result
+{
+	border: none;
+	height: 60px;
+	width: 496px;
+	margin-bottom: 5px;
+	background-color: rgba(1, 1, 1, 0.5);
+	color: white;
+	font-size: 55px;
+	text-align: right;
+}
+/* design for the button area */
+#overall_area button
+{
+	display: inline-block;
+	border: none;
+	margin: 0;
+	margin-bottom: 5px;
+    width: 118px;
+    height: 77px;
+    background-color: rgba(34, 66, 224, 0.3);
+    font-size: 30px;
+    color: white;
+}
+
+#button_0:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_1:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_2:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_3:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_4:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_5:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_6:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_7:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_8:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_9:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_divide:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_multiply:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_subtract:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_add:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_leftbrace:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_rightbrace:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_CE:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_backspace:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_point:hover {
+	background-color: white;
+	color: blue;
+}
+
+#button_equal:hover {
+	background-color: #00c0ff;
+	color: white;
+}
