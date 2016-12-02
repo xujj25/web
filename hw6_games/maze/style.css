@@ -1,0 +1,161 @@
+body
+{
+	font-family: "华文细黑";
+}
+
+h1
+{
+	text-align: center;
+	font-size: 32px;
+}
+/*--------------------tip area--------------------*/
+div.tip
+{
+	height: 77px;
+	padding: 0;
+	margin-bottom: 5px;
+
+	text-align: center;
+	font-size: 24px;
+}
+
+#operation_tip
+{
+	margin-bottom: 11px;
+}
+
+#result_tip
+{
+	margin-top: 0;
+}
+/*--------------------maze area--------------------*/
+.wall
+{
+	border: 1px black solid;
+	background-color: #EEEEEE;
+}
+/* style of the wall after losing the game */
+.lose_wall
+{
+	background-color: red;
+}
+
+#maze_area
+{
+	margin: auto;
+	position: relative;
+	width: 500px;
+	height: 300px;
+}
+/* dealing with the problem of overlap of borders of wall blocks and set the blocks' position */
+#maze_area .wall
+{
+	position: absolute;
+	
+	top: 0;
+	left: 0;
+	height: 200px;
+	width: 150px;
+	z-index: 1;
+}
+
+#maze_area .wall + .wall
+{
+	border-left: none;
+	border-right: none;
+	z-index: 2;
+	
+	left: 151px;
+	height: 50px;
+	width: 198px;
+}
+
+#maze_area .wall + .wall + .wall
+{
+	border-left: 1px black solid;
+	border-right: 1px black solid;
+	z-index: 1;
+	
+	left: 348px;
+	height: 200px;
+	width: 150px;
+}
+
+#maze_area .wall + .wall + .wall + .wall
+{
+	border: 1px black solid;
+	
+	top: 250px;
+	left: 0;
+	height: 48px;
+	width: 498px;
+}
+
+#maze_area .wall + .wall + .wall + .wall + .wall
+{
+	border-bottom: none;
+	
+	top: 100px;
+	left: 200px;
+	height: 150px;
+	width: 98px;
+}
+/* set style for start block and and block */
+#start_block
+{
+	background-color: #88ff88;
+	left: 0;
+}
+
+#end_block
+{
+	background-color: #8888ff;
+	right: 0;
+}
+
+#start_block, #end_block
+{
+	position: absolute;
+	top: 205px;
+
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	padding: 5px;
+
+	font-family: Arial;
+	font-size: 25pt;
+	text-align: center;
+}
+/* set style for test cheat div */
+#test_cheat_div
+{
+	position: absolute;
+	top: 200px;
+	right: 42px;
+	height: 50px;
+	width: 20px;
+}
+/*--------------------more tip--------------------*/
+#more_tip
+{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#more_tip>p
+{
+	text-align: left;
+}
+
+#walls
+{
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	width: 102px;
+	height: 27px;
+}
+
+

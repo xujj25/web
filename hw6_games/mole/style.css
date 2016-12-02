@@ -1,0 +1,130 @@
+body
+{
+	overflow: auto;
+}
+
+h1
+{
+	font-family: "华文细黑";
+	text-align: center;
+	font-size: 25px;
+}
+
+#tip
+{
+	font-family: "华文细黑";
+	text-align: center;
+}
+/* -------------------- set data area -------------------- */
+#data
+{
+	position: relative;
+	width: 285px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* -------------------- style and position of elements in left block -------------------- */
+#left_block
+{
+	width: 150px;
+}
+/* start and stop button */
+#start_and_stop
+{
+	width: 150px;
+	height: 20px;
+	font-size: 10px;
+	background-color: white;
+	border: 1px solid #d0cfcf;
+	border-radius: 5%;
+	margin-bottom: 10px;
+}
+/* result output area */
+#result
+{
+	width: 135px;
+	height: 20px;
+	background-color: white;
+	border: 1px solid #d0cfcf;
+}
+/* -------------------- style and position of elements in right block -------------------- */
+#right_block
+{
+	float: right;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100px;
+	font-family: "华文细黑";
+	text-align: center;
+}
+
+#right_block input
+{
+	width: 35px;
+	height: 20px;
+	background-color: white;
+	border: 1px solid #d0cfcf;
+}
+/* time output area */
+#time_div
+{
+	padding: 0;
+	position: relative;
+	right: -4px;
+	margin-bottom: 5px;
+}
+/* score output area */
+#score_div
+{
+	right: 0;
+}
+/* -------------------- style of mole_area -------------------- */
+#mole_area
+{
+	margin-top: 35px;
+	margin-bottom: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 240px;
+	height: 165px;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+}
+
+.mole
+{
+	width: 14px;
+	height: 14px;
+	padding: 0;
+	margin-top: 9px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 50%;
+	background-color: white;
+	border: 1px solid #a09b9b;
+	outline: none;
+}
+/* style of mole after chozen as the mole going to be hit */
+.chozen_mole
+{
+	box-shadow: inset 0px 0px 4px 2px #49adf1;	
+}
+/* -------------------- style of instruction area -------------------- */
+#instructions
+{
+	width: 670px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#instructions>h2
+{	
+	font-size: 15px;
+}
+
+#instructions>ol
+{
+	font-size: 15px
+}
