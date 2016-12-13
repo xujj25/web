@@ -73,8 +73,9 @@ function checkEmail() {
 }
 
 function listenReset() {
-	$("#reset").click(function() {
+	$("#Reset").click(function() {
 		$('.tip').html("");
+		// $('input[type="text"]').attr('value', '');
 	});
 }
 
@@ -98,7 +99,31 @@ function allCanUse() {
 }
 
 function listenSubmit() {
-	$("form").submit(function() {
+	// $("form").submit(function() {
+	// 	if (allCanUse() != -1) {
+	// 		alert('信息项仍有错误，请修改后再提交！');
+	// 		return false;
+	// 	} else {
+	// 		var usernameNow = $('#username').val();
+	// 		var formjson = $('#register_form').serialize();
+	// 		console.log(formjson);
+	// 		$.ajax({
+	// 			url: "/",
+	// 			type: "POST",
+	// 			data: formjson,
+	// 			complete: function(xhr, ts) {
+	// 				console.log(ts);
+	// 			},
+	// 			error: function(obj, info, err) {
+	// 				if (err) {
+	// 					console.log(err);
+	// 					console.log('info: ' + info);
+	// 				}
+	// 			}
+	// 		});
+	// 	}
+	// });
+/*	$('#submit').click(function(event) {
 		if (allCanUse() != -1) {
 			alert('信息项仍有错误，请修改后再提交！');
 			return false;
@@ -107,9 +132,45 @@ function listenSubmit() {
 			var formjson = $('#register_form').serialize();
 			console.log(formjson);
 			$.ajax({
-				url: "/",
+				url: "/handlePost",
 				type: "POST",
 				data: formjson,
+				async: false,
+				success: function(data, status) {
+					// if (data === 'yes')
+						// window.location.href = "?username=" + usernameNow;
+				},
+				complete: function(xhr, ts) {
+					console.log(ts);
+				},
+				error: function(obj, info, err) {
+					if (err) {
+						console.log(err);
+						console.log('info: ' + info);
+					}
+				}
+			});
+		}
+	});*/
+	$('#Submit').click(function(event) {
+		if (allCanUse() != -1) {
+			alert('信息项仍有错误，请修改后再提交！');
+			// event.preventDefault();
+		} else {
+			var usernameNow = $('#username').val();
+			var formjson = $('#register_form').serialize();
+			console.log(formjson);
+			$.ajax({
+				url: "/handlePost",
+				type: "POST",
+				data: formjson,
+				// async: false,
+				success: function(data, status) {
+					if (data === 'yes')
+						window.location.href = "?username=" + usernameNow;
+					else
+						alert('信息重复!');
+				},
 				complete: function(xhr, ts) {
 					console.log(ts);
 				},

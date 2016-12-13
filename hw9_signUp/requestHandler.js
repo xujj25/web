@@ -136,8 +136,8 @@ function handlePost(pathname, response, postData, query) {  // 处理post请求
 	console.log('get post data ' + postData);
 	if (!postData) {
 		console.log('拒绝在没有提交数据的情况下对handlePost页面的访问，跳转至注册页');
-		response.writeHead(301, {'Location': '/'});
-		response.end();
+		// response.writeHead(301, {'Location': '/'});
+		response.end('no');
 		return;
 	}
 	var user = qs.parse(postData);
@@ -149,8 +149,8 @@ function handlePost(pathname, response, postData, query) {  // 处理post请求
 		tempUserMemory.push(user);
 		console.log('注册成功！跳转至详情页');
 		showUsers();
-		response.writeHead(301, {'Location': '/?username=' + user['username']});
-		response.end();
+		// response.writeHead(301, {'Location': '/?username=' + user['username']});
+		response.end('yes');
 	}
 }
 
