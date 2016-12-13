@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .form_container#regist_container
+        h2 用户#{title}
+        #repeat_notice
+        form.form_style
+            .input_area
+                label(for='username') 用户名
+                input(type='text', name='username', id='username', value='')
+                div#username_tip.tip
+            .input_area
+                label(for='student_id') 学号
+                input(type='text', name='student_id', id='student_id', value='')
+                div#stu_id_tip.tip
+            .input_area
+                label(for='phone_number') 电话
+                input(type='text', name='phone_number', id='phone_number', value='')
+                div#phone_tip.tip
+            .input_area
+                label(for='email_address') 邮箱
+                input(type='text', name='email_address', id='email_address', value='')
+                div#email_tip.tip
+            .input_area
+                label(for='password') 密码
+                input(type='password', name='password', id='password', value='')
+                div#password_tip.tip
+            .input_area
+                label(for='password') 确认密码
+                input(type='password', name='password', id='password', value='')
+                div#password_tip.tip
+            .button_area
+                input(type='submit', id='submit', value='提交')
+                input(type='reset', name='重置', id='reset')
+
+

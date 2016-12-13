@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .form_container#login_container
+        h2 用户#{title}
+        #repeat_notice
+        form.form_style#login_form
+            .input_area
+                label(for='username') 用户名
+                input(type='text', name='username', id='username', value='')
+                div#username_tip.tip
+            .input_area
+                label(for='password') 密码
+                input(type='password', name='password', id='password', value='')
+                div#password_tip.tip
+            .button_area
+                input(type='submit', id='submit', value='登录')
+                input(type='reset', name='重置', id='reset')
