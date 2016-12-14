@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	.form_container#detail_container
+		h2 用户#{title}
+		#info_container
+			.info_item 用户名：#{username}
+			.info_item 学号：#{student_id}
+			.info_item 电话：#{phone_number}
+			.info_item 邮箱：#{email_address}
+		button#logout 退出

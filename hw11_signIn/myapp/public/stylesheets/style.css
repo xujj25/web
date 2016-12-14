@@ -58,7 +58,12 @@ h1
 
 #login_container
 {
-	height: 300px;
+	height: 310px;
+}
+
+#detail_container
+{
+	height: 400px;
 }
 
 h2
@@ -106,7 +111,7 @@ h2
 	right: 70px;
 }
 
-.button_area>input
+.button_area>input, #logout
 {
 	margin-right: 5px;
 	color: white;
@@ -119,9 +124,16 @@ h2
 	margin-bottom: 35px;
 }
 
-.button_area>input:hover
+.button_area>input:hover, #logout:hover
 {
 	background-color: #3379fb;
+}
+
+#logout
+{
+	position: absolute;
+	left: 420px;
+	top: 350px;
 }
 
 .tip
