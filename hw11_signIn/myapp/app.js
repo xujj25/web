@@ -7,9 +7,10 @@ var bodyParser = require('body-parser');
 
 var login = require('./routes/login');
 var regist = require('./routes/regist');
-var handlePost = require('./routes/handlePost');
-var connect = require('./routes/connect');
-var insert = require('./routes/insert');
+var loginPost = require('./routes/loginPost');
+var registPost = require('./routes/registPost');
+// var connect = require('./routes/connect');
+// var insert = require('./routes/insert');
 var mongoose = require('mongoose');
 var app = express();
 
@@ -27,9 +28,10 @@ app.use(express.static(path.join(__dirname	, 'public')));
 
 app.use('/', login);
 app.use('/regist', regist);
-app.use('/handlePost', handlePost);
-app.use('/connect', connect);
-app.use('/insert', insert);
+// app.use('/loginPost', loginPost);
+// app.use('/registPost', registPost);
+// app.use('/connect', connect);
+// app.use('/insert', insert);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -54,9 +56,9 @@ app.use(function(err, req, res, next) {
 //   res.send('Hello World!');
 // });
 
+
 var server = app.listen(3000, function () {
   //connect db
-  mongoose.connect('mongodb://localhost/runoob');
   var host = server.address().address;
   var port = server.address().port;
 

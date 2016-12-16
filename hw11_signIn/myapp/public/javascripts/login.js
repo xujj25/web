@@ -18,7 +18,7 @@
 			} else {
 				var formJson = $('#login_form').serialize();
 				$.ajax({
-					url: '/handlePost',
+					url: '/loginPost',
 					type: 'POST',
 					data: formJson,
 					success: function(data, status) {

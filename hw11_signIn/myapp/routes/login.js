@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var loginDealing = require('../controllers/login');
+var loginPage = require('../controllers/login');
+var detailPage = require('../controllers/detail');
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
   // res.render('login', { title: '登录' });
-  loginDealing(req, res, next);
+  loginPage(req, res, next);
 });
 
 module.exports = router;

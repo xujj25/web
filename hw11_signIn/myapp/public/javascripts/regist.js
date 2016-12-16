@@ -22,7 +22,7 @@
 				var formjson = $('form').serialize();
 				console.log(formjson);
 				$.ajax({
-					url: "/handlePost",
+					url: "/registPost",
 					type: "POST",
 					data: formjson,
 					// async: false,
