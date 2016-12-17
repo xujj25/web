@@ -11,6 +11,13 @@
 
 	var rp = RegistPage.prototype;
 
+	rp.infoItems = {
+		'username': '用户名',
+		'student_id': '学号',
+		'email_address': '邮箱',
+		'phone_number': '电话',
+	}
+
 	rp.listenSubmit = function() {
 		var that = this;
 		$('#Submit').click(function(event) {
@@ -20,17 +27,21 @@
 			} else {
 				var usernameNow = $('#username').val();
 				var formjson = $('form').serialize();
-				console.log(formjson);
+				// console.log(formjson);
 				$.ajax({
 					url: "/registPost",
 					type: "POST",
 					data: formjson,
 					// async: false,
 					success: function(data, status) {
-						// if (data === 'yes')
-						// 	window.location.href = "?username=" + usernameNow;
-						// else
-						// 	alert('信息重复!');
+						console.log('success data: ', data);
+						if (data === 'yes') {
+							console.log('regist success');
+						} else if (data === 'err') {
+							console.log('err occurs when regist');
+						} else {
+							$('#repeat_notice').html(that.infoItems[data] + '已存在！');
+						}
 					},
 					complete: function(xhr, ts) {
 						console.log(ts);
@@ -138,8 +149,11 @@
 			$('#confirm_password_tip').html('校验密码与原密码不同！');
 			return;
 		}
-		$('#confirm_password_tip').html('可用');
-		$('#confirm_password_tip').attr('class', 'tip canUse');
+		// console.log($('#password_tip').hasClass('canUse'));
+		if ($('#password_tip').hasClass('canUse')) {
+			$('#confirm_password_tip').html('可用');
+			$('#confirm_password_tip').attr('class', 'tip canUse');
+		}
 	}
 
 	rp.cannotUse = function(that) {
@@ -151,29 +165,39 @@
 		that.attr('class', 'tip canUse');
 	}
 
+	rp.resetRepeatNotice = function() {
+		$('#repeat_notice').html('');
+	}
+
 	rp.listenChange = function() {
 		var that = this;
 		$('#username').change(function(event) {
+			that.resetRepeatNotice();
 			that.checkUsername();
 		});
 
 		$('#student_id').change(function(event) {
+			that.resetRepeatNotice();
 			that.checkStuId();
 		});
 
 		$('#phone_number').change(function(event) {
+			that.resetRepeatNotice();
 			that.checkPhone();
 		});
 
 		$('#email_address').change(function(event) {
+			that.resetRepeatNotice();
 			that.checkEmail();
 		});
 
 		$('#password').change(function(event) {
+			that.resetRepeatNotice();
 			that.checkPasswd();
 		});
 
 		$('#confirm_password').change(function(event) {
+			that.resetRepeatNotice();
 			that.checkConfirmPasswd();
 		});
 	}

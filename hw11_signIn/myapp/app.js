@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname	, 'public')));
 app.use('/', login);
 app.use('/regist', regist);
 // app.use('/loginPost', loginPost);
-// app.use('/registPost', registPost);
+app.use('/registPost', registPost);
 // app.use('/connect', connect);
 // app.use('/insert', insert);
 

@@ -1,5 +1,4 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/appdb');
+var mongoose = require('./connectDB');
 
 var Schema = mongoose.Schema;
 
@@ -11,4 +10,4 @@ var UserSchema = new Schema({
 	password: String
 });
 
-exports.User = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
