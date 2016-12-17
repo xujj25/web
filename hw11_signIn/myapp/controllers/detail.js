@@ -1,9 +1,16 @@
+var User = require('../models/user');
+
 var detail = function(req, res, next) {
-	// res.render('detail', { title: '详情' });
-	// console.log('hhhhhh');
-	console.log('show body json: ', req.body);
-	console.log('handle post');
-	res.send('receive');
+	User.findOne(req.query, function(err, doc) {
+		if (err) {
+			console.log(err.message);
+			res.send('err');
+		}
+		if (doc != null) {
+			doc.title = '详情';
+			res.render('detail', doc);
+		}
+	});
 }
 
 module.exports = detail;

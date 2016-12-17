@@ -7,14 +7,14 @@ var handleRegistPost = function(req, res, next) {
 
 	// async query, use callback to query several parameters
 	var findName = function() {
-		User.findOne({username: req.body.username}, function(err, docs) {
+		User.findOne({username: req.body.username}, function(err, doc) {
 			console.log('finding username ...');
 			if (err) {
 				console.log(err.message);
 				res.send('err');
 			}
-			console.log('show data', docs);
-			if (docs == null) {
+			console.log('show data', doc);
+			if (doc == null) {
 				findId();
 			} else {
 				res.send('username');
@@ -23,14 +23,14 @@ var handleRegistPost = function(req, res, next) {
 	}
 
 	var findId = function() {
-		User.findOne({student_id: req.body.student_id}, function(err, docs) {
+		User.findOne({student_id: req.body.student_id}, function(err, doc) {
 			console.log('finding student_id ...');
 			if (err) {
 				console.log(err.message);
 				res.send('err');
 			}
-			console.log('show data', docs);
-			if (docs == null) {
+			console.log('show data', doc);
+			if (doc == null) {
 				findPhone();
 			} else {
 				res.send('student_id');
@@ -39,14 +39,14 @@ var handleRegistPost = function(req, res, next) {
 	}
 
 	var findPhone = function() {
-		User.findOne({phone_number: req.body.phone_number}, function(err, docs) {
+		User.findOne({phone_number: req.body.phone_number}, function(err, doc) {
 			console.log('finding phone_number ...');
 			if (err) {
 				console.log(err.message);
 				res.send('err');
 			}
-			console.log('show data', docs);
-			if (docs == null) {
+			console.log('show data', doc);
+			if (doc == null) {
 				findEmail();
 			} else {
 				res.send('phone_number');
@@ -55,14 +55,14 @@ var handleRegistPost = function(req, res, next) {
 	}
 
 	var findEmail = function() {
-		User.findOne({email_address: req.body.email_address}, function(err, docs) {
+		User.findOne({email_address: req.body.email_address}, function(err, doc) {
 			console.log('finding email_address ...');
 			if (err) {
 				console.log(err.message);
 				res.send('err');
 			}
-			console.log('show data', docs);
-			if (docs == null) {
+			console.log('show data', doc);
+			if (doc == null) {
 				insert();
 			} else {
 				res.send('email_address');

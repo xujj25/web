@@ -6,6 +6,7 @@
 	var LoginPage = function() {
 		this.listenLogin();
 		this.listenRegist();
+		this.listenChange();
 	}
 
 	var lp = LoginPage.prototype;
@@ -23,11 +24,12 @@
 					data: formJson,
 					success: function(data, status) {
 						console.log(data);
-						// if (data === 'yes')
-						// 	console.log('success');
-						// 	// window.location.href = "?username=" + usernameNow;
-						// else
-						// 	alert('fail!');
+						if (data === 'ok') {
+							console.log('success');
+							window.location.href = "?username=" + ($('#username').val());
+						} else {
+							$('#repeat_notice').html(data);
+						}
 					},
 					complete: function(xhr, ts) {
 						console.log('complete: ', ts);
@@ -47,6 +49,10 @@
 		$('#Regist').click(function(event) {
 			window.location.href = '/regist';
 		});
+	}
+
+	lp.listenChange = function() {
+		$('#repeat_notice').html('');
 	}
 
 })();
