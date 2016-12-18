@@ -1,5 +1,6 @@
 var User = require('../models/user');
 var mongoose = require('mongoose');
+var hashTool = require('../my_tools/hash');
 
 var handleRegistPost = function(req, res, next) {
 	console.log('in handle regist post');
@@ -71,12 +72,13 @@ var handleRegistPost = function(req, res, next) {
 	}
 
 	var insert = function() {
+		var pwdHash = hashTool(req.body.password);
 		var newUser = new User({
 			username: req.body.username,
 			student_id: req.body.student_id,
 			phone_number: req.body.phone_number,
 			email_address: req.body.email_address,
-			password: req.body.password,
+			password: pwdHash,
 		});
 		// console.log('new User: ', newUser);
 		newUser.save(function(err, product, num) {
@@ -84,6 +86,14 @@ var handleRegistPost = function(req, res, next) {
 				console.log('insert err: ', err);
 				res.send('err');
 			}
+			res.cookie('user',
+				{
+					username: newUser.username
+				},
+				{
+					maxAge: 600000,
+					httpOnly: true,
+				});
 			res.send('yes');
 		})
 	}

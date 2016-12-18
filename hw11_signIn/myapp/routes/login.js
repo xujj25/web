@@ -5,12 +5,16 @@ var detailPage = require('../controllers/detail');
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
-	console.log('cookie: ', req.cookie);
-	console.log('login query: ', req.query);
-	if (req.query == null)
-		loginPage(req, res, next);
-	else
+	console.log('user cookie: ', req.cookies.user);
+	console.log('username query: ', req.query.username);
+	if (req.query.username === undefined) {
+		if (req.cookies.user !== undefined)
+			res.redirect('?username=' + req.cookies.user.username);
+		else
+			loginPage(req, res, next);
+	} else {
 		detailPage(req, res, next);
+	}
 });
 
 module.exports = router;

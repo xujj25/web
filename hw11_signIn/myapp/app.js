@@ -4,9 +4,9 @@ var favicon = require('express-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('express-session');
 
 var login = require('./routes/login');
+var logout = require('./routes/logout');
 var regist = require('./routes/regist');
 var loginPost = require('./routes/loginPost');
 var registPost = require('./routes/registPost');
@@ -31,8 +31,7 @@ app.use('/', login);
 app.use('/regist', regist);
 app.use('/loginPost', loginPost);
 app.use('/registPost', registPost);
-// app.use('/connect', connect);
-// app.use('/insert', insert);
+app.use('/logout', logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

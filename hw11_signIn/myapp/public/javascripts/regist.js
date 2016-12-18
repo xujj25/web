@@ -37,6 +37,7 @@
 						console.log('success data: ', data);
 						if (data === 'yes') {
 							console.log('regist success');
+							window.location.href = '../?username=' + usernameNow;
 						} else if (data === 'err') {
 							console.log('err occurs when regist');
 						} else {

@@ -1,5 +1,6 @@
 var User = require('../models/user');
 var mongoose = require('mongoose');
+var hashTool = require('../my_tools/hash');
 
 var handleLoginPost = function(req, res, next) {
 	console.log('in handle login post');
@@ -16,14 +17,24 @@ var handleLoginPost = function(req, res, next) {
 			if (doc == null) {
 				res.send('用户不存在！');
 			} else {
-				if (doc.password != req.body.password) {
+				if (doc.password != hashTool(req.body.password)) {
 					res.send('密码不正确！');
 				} else {
+					res.cookie('user',
+						{
+							username: doc.username
+						},
+						{
+							maxAge: 600000,
+							httpOnly: true,
+						});
 					res.send('ok');
 				}
 			}
 		});
 	}
+
+	findUsername();
 }
 
 module.exports = handleLoginPost;
