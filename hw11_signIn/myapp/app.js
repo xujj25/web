@@ -10,8 +10,7 @@ var logout = require('./routes/logout');
 var regist = require('./routes/regist');
 var loginPost = require('./routes/loginPost');
 var registPost = require('./routes/registPost');
-// var connect = require('./routes/connect');
-// var insert = require('./routes/insert');
+
 var mongoose = require('mongoose');
 var app = express();
 
@@ -51,13 +50,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// add the following code from Internet
-// app.get('/', function (req, res) {
-//   res.send('Hello World!');
-// });
-
-
-var server = app.listen(3000, function () {
+// start server
+var server = app.listen(8000, function () {
   //connect db
   var host = server.address().address;
   var port = server.address().port;

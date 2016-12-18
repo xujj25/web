@@ -15,7 +15,7 @@ var handleRegistPost = function(req, res, next) {
 				console.log(err.message);
 				res.send('err');
 			}
-			console.log('show data', doc);
+			// console.log('show data', doc);
 			if (doc == null) {
 				findId();
 			} else {
@@ -31,7 +31,7 @@ var handleRegistPost = function(req, res, next) {
 				console.log(err.message);
 				res.send('err');
 			}
-			console.log('show data', doc);
+			// console.log('show data', doc);
 			if (doc == null) {
 				findPhone();
 			} else {
@@ -47,7 +47,7 @@ var handleRegistPost = function(req, res, next) {
 				console.log(err.message);
 				res.send('err');
 			}
-			console.log('show data', doc);
+			// console.log('show data', doc);
 			if (doc == null) {
 				findEmail();
 			} else {
@@ -63,7 +63,7 @@ var handleRegistPost = function(req, res, next) {
 				console.log(err.message);
 				res.send('err');
 			}
-			console.log('show data', doc);
+			// console.log('show data', doc);
 			if (doc == null) {
 				insertOne();
 			} else {
