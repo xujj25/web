@@ -1,5 +1,4 @@
-var User = require('../models/user');
-var mongoose = require('mongoose');
+var findUserInDb = require('../models/user_methods').findUser;
 var hashTool = require('../my_tools/hash');
 
 var handleLoginPost = function(req, res, next) {
@@ -7,7 +6,7 @@ var handleLoginPost = function(req, res, next) {
 
 	var findUsername = function() {
 		console.log('finding username ...');
-		User.findOne({username: req.body.username}, function(err, doc) {
+		findUserInDb({username: req.body.username}, function(err, doc) {
 			console.log('finding username ...');
 			if (err) {
 				console.log(err.message);

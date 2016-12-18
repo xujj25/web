@@ -1,12 +1,13 @@
-var User = require('../models/user');
+var findUserInDb = require('../models/user_methods').findUser;
 
-var detail = function(req, res, next) {
-	User.findOne(req.query, function(err, doc) {
+var detail = function(req, res, next, flag) {
+	findUserInDb(req.cookies.user, function(err, doc) {
 		if (err) {
 			console.log(err.message);
 			res.send('err');
 		}
 		if (doc != null) {
+			doc.info = (flag ? '' : '只能够访问自己的数据！');
 			doc.title = '详情';
 			res.render('detail', doc);
 		}

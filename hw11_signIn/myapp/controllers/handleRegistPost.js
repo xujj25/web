@@ -1,5 +1,6 @@
-var User = require('../models/user');
-var mongoose = require('mongoose');
+var userMethods = require('../models/user_methods');
+var findUserInDb = userMethods.findUser;
+var insertIntoDb = userMethods.insertUser;
 var hashTool = require('../my_tools/hash');
 
 var handleRegistPost = function(req, res, next) {
@@ -8,7 +9,7 @@ var handleRegistPost = function(req, res, next) {
 
 	// async query, use callback to query several parameters
 	var findName = function() {
-		User.findOne({username: req.body.username}, function(err, doc) {
+		findUserInDb({username: req.body.username}, function(err, doc) {
 			console.log('finding username ...');
 			if (err) {
 				console.log(err.message);
@@ -24,7 +25,7 @@ var handleRegistPost = function(req, res, next) {
 	}
 
 	var findId = function() {
-		User.findOne({student_id: req.body.student_id}, function(err, doc) {
+		findUserInDb({student_id: req.body.student_id}, function(err, doc) {
 			console.log('finding student_id ...');
 			if (err) {
 				console.log(err.message);
@@ -40,7 +41,7 @@ var handleRegistPost = function(req, res, next) {
 	}
 
 	var findPhone = function() {
-		User.findOne({phone_number: req.body.phone_number}, function(err, doc) {
+		findUserInDb({phone_number: req.body.phone_number}, function(err, doc) {
 			console.log('finding phone_number ...');
 			if (err) {
 				console.log(err.message);
@@ -56,7 +57,7 @@ var handleRegistPost = function(req, res, next) {
 	}
 
 	var findEmail = function() {
-		User.findOne({email_address: req.body.email_address}, function(err, doc) {
+		findUserInDb({email_address: req.body.email_address}, function(err, doc) {
 			console.log('finding email_address ...');
 			if (err) {
 				console.log(err.message);
@@ -64,24 +65,23 @@ var handleRegistPost = function(req, res, next) {
 			}
 			console.log('show data', doc);
 			if (doc == null) {
-				insert();
+				insertOne();
 			} else {
 				res.send('email_address');
 			}
 		});
 	}
 
-	var insert = function() {
+	var insertOne = function() {
 		var pwdHash = hashTool(req.body.password);
-		var newUser = new User({
+		var newUser = {
 			username: req.body.username,
 			student_id: req.body.student_id,
 			phone_number: req.body.phone_number,
 			email_address: req.body.email_address,
 			password: pwdHash,
-		});
-		// console.log('new User: ', newUser);
-		newUser.save(function(err, product, num) {
+		};
+		insertIntoDb(newUser, function(err, product, num) {
 			if (err) {
 				console.log('insert err: ', err);
 				res.send('err');
