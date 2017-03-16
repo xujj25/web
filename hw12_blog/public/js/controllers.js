@@ -1,60 +1,80 @@
 'use strict';
 
+
 /* Controllers */
+var appCtrls = angular.module('appControllers', []);
 
-function IndexCtrl($scope, $http) {
-  $http.get('/api/posts').
-    success(function(data, status, headers, config) {
-      $scope.posts = data.posts;
-    });
-}
+/* 封装ng的api,以尽量解耦ng与业务逻辑 */
+appCtrls
+  .service('ngApis', ['$http', '$location', '$routeParams',
+   function($http, $location, $routeParams){
+    this.http = $http;
+    this.location = $location;
+    this.routeParams = $routeParams;
+  }])
 
-function AddPostCtrl($scope, $http, $location) {
-  $scope.form = {};
-  $scope.submitPost = function () {
-    $http.post('/api/post', $scope.form).
+appCtrls
+  .controller('IndexCtrl', ['$scope', 'ngApis', IndexCtrl])
+  .controller('AddPostCtrl', ['$scope', 'ngApis', AddPostCtrl])
+  .controller('ReadPostCtrl', ['$scope', 'ngApis', ReadPostCtrl])
+  .controller('EditPostCtrl', ['$scope', 'ngApis', EditPostCtrl])
+  .controller('DeletePostCtrl', ['$scope', 'ngApis', DeletePostCtrl]);
+
+
+
+function IndexCtrl(thisScope, apis) {
+  apis.http.get('/api/posts').
+      success(function(data, status, headers, config) {
+        thisScope.posts = data.posts;
+      });
+  }
+
+function AddPostCtrl(thisScope, apis) {
+  thisScope.form = {};
+  thisScope.submitPost = function () {
+    apis.http.post('/api/post', thisScope.form).
       success(function(data) {
-        $location.path('/');
+        apis.location.path('/');
       });
   };
 }
 
-function ReadPostCtrl($scope, $http, $routeParams) {
-  $http.get('/api/post/' + $routeParams.id).
+function ReadPostCtrl(thisScope, apis) {
+  apis.http.get('/api/post/' + apis.routeParams.id).
     success(function(data) {
-      $scope.post = data.post;
+      thisScope.post = data.post;
     });
 }
 
-function EditPostCtrl($scope, $http, $location, $routeParams) {
-  $scope.form = {};
-  $http.get('/api/post/' + $routeParams.id).
+function EditPostCtrl(thisScope, apis) {
+  thisScope.form = {};
+  apis.http.get('/api/post/' + apis.routeParams.id).
     success(function(data) {
-      $scope.form = data.post;
+      thisScope.form = data.post;
     });
 
-  $scope.editPost = function () {
-    $http.put('/api/post/' + $routeParams.id, $scope.form).
+  thisScope.editPost = function () {
+    apis.http.put('/api/post/' + apis.routeParams.id, thisScope.form).
       success(function(data) {
-        $location.url('/readPost/' + $routeParams.id);
+        apis.location.url('/readPost/' + apis.routeParams.id);
       });
   };
 }
 
-function DeletePostCtrl($scope, $http, $location, $routeParams) {
-  $http.get('/api/post/' + $routeParams.id).
+function DeletePostCtrl(thisScope, apis) {
+  apis.http.get('/api/post/' + apis.routeParams.id).
     success(function(data) {
-      $scope.post = data.post;
+      thisScope.post = data.post;
     });
 
-  $scope.deletePost = function () {
-    $http.delete('/api/post/' + $routeParams.id).
+  thisScope.deletePost = function () {
+    apis.http.delete('/api/post/' + apis.routeParams.id).
       success(function(data) {
-        $location.url('/');
+        apis.location.url('/');
       });
   };
 
-  $scope.home = function () {
-    $location.url('/');
+  thisScope.home = function () {
+    apis.location.url('/');
   };
 }

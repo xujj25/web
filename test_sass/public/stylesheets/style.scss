@@ -1,0 +1,7 @@
+$border_color : blue;
+$back_color : red;
+
+#test_sass {
+    border : 5px + 5px solid $border_color;
+    background-color : $back_color;
+}
