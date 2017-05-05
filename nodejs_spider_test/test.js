@@ -1,7 +1,7 @@
 var cheerio = require('cheerio');
 var fs = require('fs');
 var Request = require('request');
-var site = "https://www.zhihu.com/";
+var site = "https://ch.3g.qq.com/channel/api/tab@getList";
 
 Request.get({uri:site,headers: {
     'User-Agent': 'spider'
@@ -13,7 +13,7 @@ Request.get({uri:site,headers: {
     else{
         console.log("访问" + site +  "完成")
         var match = body.match(/\d+\.\d+\.\d+\.\d+/g);
-        fs.writeFile('html_test.html', body, function(err) {
+        fs.writeFile('data.json', body, function(err) {
           if (err)
             throw err;
           console.log('html download finished');
