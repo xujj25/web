@@ -1,0 +1,13 @@
+{
+  "name": "weibo_spider",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node test"
+  },
+  "dependencies": {
+    "cheerio": "*",
+    "request": "*",
+    "html-entities": "*"
+  }
+}

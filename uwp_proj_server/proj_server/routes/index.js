@@ -1,32 +1,25 @@
 var express = require('express');
 var router = express.Router();
+var serverOnValidator = require('../controllers/serverOnValidator');
+var getNewsList = require('../controllers/getNewsList');
+var getNewsDetail = require('../controllers/getNewsDetail');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('ok');
+  console.log('receive request for server on validator in router');  
+  serverOnValidator(req, res, next);
 });
 
-/* GET users listing. */
+/* GET news listing. */
 router.get('/news', function(req, res, next) {
-  var news = {
-    is_success: 1,
-    err_msg: '',
-    news: [
-      {
-        _id: '1_0_2870152_1171_1494230640',
-        img_url: 'http://a1.huanqiu.cn/images/73fa315aeaa61eafe9990df120afa5c8.jpg',
-        title: '许魏洲迷彩风街拍曝光  眼神清澈帅气养眼',
-        src_site: '环球网'
-      },
-      {
-        _id: '1_0_2870151_127_1494230220',
-        img_url: 'http://a1.huanqiu.cn/images/276ff3e5b4352644c2dd208625054484.jpg',
-        title: '德国汉诺威发现二战遗留炸弹 紧急疏散5万居民',
-        src_site: '东方IC'
-      }
-    ]
-  };
-  res.send(news);
+  console.log('receive request for news list in router');
+  getNewsList(req, res, next);
+});
+
+/* GET news detail data */
+router.get('/news_detail', function(req, res, next) {
+  console.log('receive request for news detail in router');  
+  getNewsDetail(req, res, next);
 });
 
 module.exports = router;

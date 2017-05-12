@@ -1,7 +1,7 @@
 var cheerio = require('cheerio');
 var fs = require('fs');
 var Request = require('request');
-var site = "http://uluai.com.cn/rcmd/falls/getRtCmd?siteId=5011&cki=8da9695417521bbcce77f9d938e5535d5dc8&num=20&chan=";
+var site = 'http://m.people.cn/52/index.html';
 /*
 人民网新闻中心 http://m.people.cn/52/index.html 直接使用jq提取
 
@@ -31,23 +31,23 @@ Request.get({uri:site,headers: {
     }
     else{
         console.log("访问" + site +  "完成")
-        var match = body.match(/\d+\.\d+\.\d+\.\d+/g);
+        // var match = body.match(/\d+\.\d+\.\d+\.\d+/g);
         
-        var jsonArr = JSON.parse(body);
-        console.log(typeof jsonArr);
-        console.log(jsonArr.length);
-        var i;
-        for (i = 0; i < jsonArr.length; i++)
-        {
-          console.log(jsonArr[i].date);
-        }
+        // var jsonArr = JSON.parse(body);
+        // console.log(typeof jsonArr);
+        // console.log(jsonArr.length);
+        // var i;
+        // for (i = 0; i < jsonArr.length; i++)
+        // {
+        //   console.log(jsonArr[i].date);
+        // }
         // console.log(jsonArr);
 
-        // fs.writeFile('data.json', body, function(err) {
-        //   if (err)
-        //     throw err;
-        //   console.log('json download finished');
-        // });
+        fs.writeFile('html_test.html', body, function(err) {
+          if (err)
+            throw err;
+          console.log('html download finished');
+        });
 
         // console.log(body);
         // handleDB(body);
