@@ -54,12 +54,10 @@ var getNewsList = function(req, res, next) {
                     } else if (docs.length == 0) {
                         console.log('暂无新的资讯');
                         throw new NewsListException('暂无新的资讯');
-                    } else {
-                        console.log('xxxx');                    
+                    } else {                  
                         docs.sort(function(a, b) {
                             return a.date < b.date ? 1 : -1;
                         });
-                        console.log('hhh');
                         var len = docs.length < 20 ? docs.length : 20;
                         var news;
                         for (var i = 0; i < len; i++) {

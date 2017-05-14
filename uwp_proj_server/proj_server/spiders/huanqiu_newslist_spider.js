@@ -29,7 +29,6 @@ var huanqiu_spider = function() {
                 var i;
                 for (i = 0; i < newsArr.length; i++)
                 {
-                    console.log(newsArr[i].pic[0]);
                     data_processor.findAndInsertNews(
                         {
                             news_id: newsIdPrefix + newsArr[i].id,
