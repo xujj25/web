@@ -35,6 +35,10 @@ var main_spider = function(keywordRaw) {
     return entities.decode($.html());
   };
 
+  var strToDate = function(str) {
+    return (str.length < 16) ? new Date('2017-' + str) : new Date(str);
+  };
+
   var mblogProcessor = function(mblog, kw) {
     console.log('正在处理微博内容。。。');
     weiboDao.findMatchWeibo({
@@ -58,7 +62,7 @@ var main_spider = function(keywordRaw) {
           reposts_count: mblog.reposts_count,
           comments_count: mblog.comments_count,
           source: mblog.source,
-          created_at: mblog.created_at
+          created_at: strToDate(mblog.created_at)
         };
         console.log(weiboObj);
         weiboDao.insertWeibo(weiboObj, function(err, product, num) {
@@ -77,7 +81,6 @@ var main_spider = function(keywordRaw) {
       console.log(err);
     } else {
       var jsonObj = JSON.parse(body);
-      
       if (jsonObj.cards === undefined) {
         console.log('爬虫受限制');
       } else {
@@ -105,11 +108,12 @@ var main_spider = function(keywordRaw) {
   }
 
   var page = 0;
-  var waitingTime = 10000;
+  var finishFlag = false;
+  var waitingTime = 20000;
   var timerseed = setInterval(function() {
       spider(getUrl(keyword, page));
       page++;
-      if (page == 100) {
+      if (page == 1000) {
         console.log('\n完成当前关键词爬取\n');
         clearInterval(timerseed);
       } else {
@@ -119,4 +123,3 @@ var main_spider = function(keywordRaw) {
 }
 
 module.exports = main_spider;
-// main_spider('魏则西');

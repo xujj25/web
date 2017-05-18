@@ -16,7 +16,7 @@ var weiboSchema = new Schema(
     reposts_count: Number,
     comments_count: Number,
     source: String,
-    created_at: String
+    created_at: Date
   }
 );
 
