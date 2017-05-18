@@ -109,7 +109,7 @@ var main_spider = function(keywordRaw) {
 
   var page = 0;
   var finishFlag = false;
-  var waitingTime = 20000;
+  var waitingTime = 5000;
   var timerseed = setInterval(function() {
       spider(getUrl(keyword, page));
       page++;
